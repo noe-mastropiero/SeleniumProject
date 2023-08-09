@@ -60,7 +60,7 @@ public class LoginPage {
     }
 
     public WebElement txtErrorMessage(){return TxtEmailError;}
-    public WebElement txtUnuccessLogin(){return TxtUnsuccessLogin;}
+
     public WebElement TxtDetailedLoginError(){return TxtDetailLoginError;}
 
 
