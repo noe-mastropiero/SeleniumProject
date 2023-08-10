@@ -8,4 +8,6 @@ Feature: Dashboard page
 
 
   Scenario: Validate critical elements in dashboard page are displayed
+    Given I am able to see the Dashboard header
+
 

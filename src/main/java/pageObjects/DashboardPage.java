@@ -27,9 +27,7 @@ public class DashboardPage {
     @CacheLookup
     WebElement ContainerFeeds;
 
-    public WebElement dashboard(){
-        return TxtDashboardPanel;
-    }
+    public WebElement dashboard(){return TxtDashboardPanel;}
 
     public WebElement welcomeHeader(){
         return TxtWelcomeHeader;
