@@ -1,29 +1,26 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.*;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.testng.Assert;
+import pageObjects.BaseClass;
 import pageObjects.LoginPage;
 
-public class StepDefinition_LoginPage {
-
-    public WebDriver driver;
-    public LoginPage lp;
+public class StepDefinition_LoginPage extends BaseClass {
 
     @Given("I launch Chrome browser")
     public void i_launch_chrome_browser() {
         System.setProperty("webdriver.chrome.driver","C:\\Users\\noe.cardenas\\REPOS\\ESCALA\\Selenium_framework_0.1\\src\\main\\drivers\\chromedriver.exe");
         ChromeDriverService service = new ChromeDriverService.Builder().withLogOutput(System.out).build();
-        driver = new ChromeDriver(service);
-        lp = new LoginPage(driver);
+        ldriver = new ChromeDriver(service);
+        lp = new LoginPage(ldriver);
     }
 
     @Then("I open the page \"([^\"]*)\"$")
     public void i_upen_the_page(String url) {
-        driver.get(url);
-        driver.manage().window().maximize();
+        ldriver.get(url);
+        ldriver.manage().window().maximize();
     }
 
     @Then("I type my user as \"([^\"]*)\" and password as \"([^\"]*)\"$")
@@ -48,7 +45,7 @@ public class StepDefinition_LoginPage {
 
     @Then("I close the browser window$")
     public void IcloseBrowser(){
-        driver.quit();
+        ldriver.quit();
     }
 
     @Then("I validate the error wrong email message is displayed as: \"([^\"]*)\"$")

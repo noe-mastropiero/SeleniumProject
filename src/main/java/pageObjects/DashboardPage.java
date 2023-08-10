@@ -6,13 +6,12 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class DashboardPage {
-
+public class DashboardPage  {
     public WebDriver ldriver;
 
     public DashboardPage(WebDriver rdriver){
-        ldriver=rdriver;
-        PageFactory.initElements(rdriver,this);
+        ldriver = rdriver;
+        PageFactory.initElements(ldriver,this);
     }
 
     @FindBy(xpath="/html/body/div[3]/div[1]/div[1]/h1")
@@ -27,7 +26,7 @@ public class DashboardPage {
     @CacheLookup
     WebElement ContainerFeeds;
 
-    public WebElement dashboard(){return TxtDashboardPanel;}
+    public Boolean dashboardisDisplayed(){return TxtDashboardPanel.isDisplayed();}
 
     public WebElement welcomeHeader(){
         return TxtWelcomeHeader;
