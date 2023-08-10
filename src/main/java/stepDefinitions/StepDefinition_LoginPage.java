@@ -23,6 +23,7 @@ public class StepDefinition_LoginPage {
     @Then("I open the page \"([^\"]*)\"$")
     public void i_upen_the_page(String url) {
         driver.get(url);
+        driver.manage().window().maximize();
     }
 
     @Then("I type my user as \"([^\"]*)\" and password as \"([^\"]*)\"$")
